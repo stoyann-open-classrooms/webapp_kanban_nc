@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0.3rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:active {
+  transform: scale(0.98);
+}
+
+input {
+  flex-grow: 2;
+  border: none;
+  font-size: 16px;
+  background-color: transparent;
+  color: white;
+}
+
+input:focus {
+  outline: none;
+}
+
+.atraiter {
+  background-color: #e4b949;
+}
+
+.encours {
+  background-color: #a9ca9a;
+}
+
+.retard {
+  background-color: #ec919a;
+}
+
+img {
+  height: 2rem;
+}
+
+.container-sidebar {
+  display: flex;
+  transition: transform 0.2s ease-out;
+  margin-top: 6vh;
+  position: fixed;
+  left: 0;
+  z-index: 9999;
+}
+
+.visible-nav {
+  transform: translateX(0px) !important;
+}
+
+.sidebar {
+  flex-shrink: 0;
+  width: 80px;
+  height: 95vh;
+  background-color: #1d1d1d;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  width: 100%;
+  margin-top: 6vh;
+  margin-left: 1.8rem;
+}
+
+.sidebar a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  height: 5rem;
+  width: 5rem;
+  margin-top: 4rem;
+  background-color: white;
+  cursor: pointer;
+}
+.sidebar a:active {
+  transform: scale(0.98);
+}
+
+a.active {
+  background-color: #ec919a;
+}
+
+.sidebar ul li {
+  width: 4rem;
+  text-align: center;
+  height: 4rem;
+}
+
+.toggle-nav-btn {
+  position: absolute;
+  z-index: 150;
+  top: 0px;
+  left: 1.5rem;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  z-index: 999999999;
+}
+
+.toggle-nav-btn img {
+  width: 5rem;
+  top: 1.8rem;
+  z-index: 999999;
+  position: fixed;
+  left: 1.8rem;
+}
+
+@media screen and (max-width: 900px) {
+  .container-sidebar {
+    transform: translateX(-100%);
+  }
+  .sidebar {
+    width: 8rem;
+  }
+  .sidebar ul li img {
+    width: 3rem;
+    height: 3rem;
+  }
+}/*# sourceMappingURL=Sidebar.css.map */

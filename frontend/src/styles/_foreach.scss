@@ -1,0 +1,9 @@
+// ajoute dynamiquement les couleurs des tags et dropdowns
+
+$status: atraiter $orange, encours $green, retard $red;
+
+@each $statu in $status {
+  .#{nth($statu, 1)} {
+    background-color: nth($statu, 2);
+  }
+}

@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0.3rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:active {
+  transform: scale(0.98);
+}
+
+input {
+  flex-grow: 2;
+  border: none;
+  font-size: 16px;
+  background-color: transparent;
+  color: white;
+}
+
+input:focus {
+  outline: none;
+}
+
+.card-info, .card h2 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card {
+  background-color: #fff;
+  color: #333;
+  max-width: 400px;
+  border-radius: 15px;
+  margin: 1rem 1rem;
+  width: 100%;
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+
+.card.reverse {
+  background-color: #414141;
+  color: #fff;
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+
+.card-cover {
+  width: 22%;
+  height: 15rem;
+  display: flex;
+  flex-shrink: 0;
+}
+.card-cover .card-cover-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card-info {
+  margin: 2rem;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  text-align: center;
+  flex-basis: 100%;
+}
+.card-info h3 {
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+.card-info .refference {
+  padding: 5px 0;
+  background-color: #e3001b;
+  color: #fff;
+  letter-spacing: 2px;
+  border-radius: 1rem;
+}
+.card-info div {
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+.num-display {
+  background: #f4f4f4;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 19px;
+  border: 1px #eee solid;
+  transition: 0.3s;
+  position: absolute;
+  top: -10px;
+  background-color: #e3001b;
+  color: #fff;
+  font-weight: bolder;
+  border: 2px solid white;
+  left: -10px;
+}
+
+.txt-display {
+  padding: 0.4rem 0.7rem;
+  text-align: center;
+  font-size: 1rem;
+  border-radius: 1rem;
+  transition: 0.3s;
+  position: absolute;
+  top: 10px;
+  color: #414141;
+  font-weight: bolder;
+  left: 10px;
+}
+
+.close,
+.edit {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.edit {
+  right: 40px;
+}
+
+.card-date {
+  display: flex;
+  margin-top: 2rem;
+}
+.card-date h5 {
+  text-transform: uppercase;
+  justify-self: start;
+}
+.card-date p {
+  background-color: #e3001b;
+  color: #fff;
+  margin: 0 5px;
+  font-size: 1.1rem;
+  padding: 1rem 2px;
+  border-radius: 1rem;
+}
+.card-date div {
+  flex: 1;
+}
+
+.card-info-request {
+  margin: 0rem 3rem;
+}
+.card-info-request .title-card-kanban {
+  margin-top: 2.2rem;
+  color: #e3001b;
+}
+
+.box {
+  margin: 1rem 0 0 5rem;
+}
+
+.no-product {
+  color: #e3001b;
+  margin-top: 2rem;
+  border: 2px solid #e3001b;
+  padding: 0.2rem;
+  border-radius: 1rem;
+  font-weight: bolder;
+  font-size: 1.2rem;
+}/*# sourceMappingURL=Card.css.map */

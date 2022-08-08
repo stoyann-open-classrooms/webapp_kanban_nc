@@ -1,0 +1,64 @@
+// ===================== flexbox =====================
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+// ===================== Titles =====================
+%big-title {
+  color: $primary;
+  text-align: center;
+  font-size: 3rem;
+}
+
+//  ==================== modal
+%modal{
+  position: absolute;
+  color: whitesmoke;
+  border-radius: 1rem;
+  padding: 1rem;
+  top: 40%;
+  left: 50%;
+  max-width: 80rem;
+  min-width: 300px;
+  transform: translate(-50%, -50%);
+}
+%overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 9999999999;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.801);
+}
+
+
+
+
+
+
+%scroller {
+  height: 65vh;
+  max-width: 1300px;
+  margin-right: 1rem;
+  overflow-y: auto;
+}
+
+%btn-form-submit {
+  background-color: $primary;
+  margin-top: 2rem;
+  color: white;
+  text-transform: uppercase;
+  padding: 0.7rem 2rem;
+}
+
+
+%text-cut {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

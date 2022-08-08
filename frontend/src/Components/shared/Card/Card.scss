@@ -1,0 +1,157 @@
+@import '../../../styles/reset';
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+@import '../../../styles/placeholders';
+
+.card {
+  background-color: #fff;
+  color: #333;
+  max-width: 400px;
+  border-radius: 15px;
+  margin: 1rem 1rem;
+  width: 100%;
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+
+.card.reverse {
+  background-color: $dark;
+  color: #fff;
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+  @extend %text-cut;
+}
+
+.card-cover {
+  width: 22%;
+  height: 15rem;
+  display: flex;
+  flex-shrink: 0;
+  .card-cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.card-info {
+  margin: 2rem;
+  flex: 1;
+
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  text-align: center;
+  @extend %text-cut;
+  h3 {
+    opacity: 0.8;
+    text-transform: uppercase;
+  }
+  .refference {
+    padding: 5px 0;
+    background-color: $primary;
+    color: #fff;
+    letter-spacing: 2px;
+    border-radius: $radius;
+  }
+  div {
+    font-size: 1.2rem;
+    font-weight: bolder;
+  }
+  flex-basis: 100%;
+}
+
+.num-display {
+  background: #f4f4f4;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 19px;
+  border: 1px #eee solid;
+  transition: 0.3s;
+  position: absolute;
+  top: -10px;
+  background-color: $primary;
+  color: #fff;
+  font-weight: bolder;
+  border: 2px solid white;
+  left: -10px;
+}
+.txt-display {
+  padding: 0.4rem 0.7rem;
+  text-align: center;
+  font-size: 1rem;
+  border-radius: $radius;
+  transition: 0.3s;
+  position: absolute;
+  top: 10px;
+  color: $dark;
+  font-weight: bolder;
+
+  left: 10px;
+}
+.close,
+.edit {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.edit {
+  right: 40px;
+}
+
+.card-date {
+  display: flex;
+  margin-top: 2rem;
+
+  h5 {
+    text-transform: uppercase;
+    justify-self: start;
+  }
+  p {
+    background-color: $primary;
+    color: #fff;
+    margin: 0 5px;
+    font-size: 1.1rem;
+    padding: 1rem 2px;
+    border-radius: $radius;
+  }
+  div {
+    flex: 1;
+  }
+}
+
+.card-info-request {
+  margin: 0rem 3rem;
+
+  .title-card-kanban {
+    margin-top: 2.2rem;
+    color: $primary;
+  }
+}
+
+.box {
+  margin: 1rem 0 0 5rem;
+}
+.no-product{
+  color: $primary;
+  margin-top: 2rem;
+  border: 2px solid $primary;
+  padding: 0.2rem;
+  border-radius: $radius;
+  font-weight: bolder;
+  font-size: 1.2rem;
+}

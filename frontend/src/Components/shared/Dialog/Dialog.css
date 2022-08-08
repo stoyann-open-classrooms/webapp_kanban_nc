@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0.3rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:active {
+  transform: scale(0.98);
+}
+
+input {
+  flex-grow: 2;
+  border: none;
+  font-size: 16px;
+  background-color: transparent;
+  color: white;
+}
+
+input:focus {
+  outline: none;
+}
+
+.atraiter {
+  background-color: #e4b949;
+}
+
+.encours {
+  background-color: #a9ca9a;
+}
+
+.retard {
+  background-color: #ec919a;
+}
+
+.btn-form-submit {
+  background-color: #e3001b;
+  margin-top: 2rem;
+  color: white;
+  text-transform: uppercase;
+  padding: 0.7rem 2rem;
+}
+
+.modal {
+  position: absolute;
+  color: whitesmoke;
+  border-radius: 1rem;
+  padding: 1rem;
+  top: 40%;
+  left: 50%;
+  max-width: 90rem;
+  min-width: 300px;
+  transform: translate(-50%, -50%);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 9999999999;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.801);
+}
+
+.close-Modal {
+  position: absolute;
+  color: #e3001b;
+  font-weight: bolder;
+  right: 1rem;
+  padding: 1.8rem 1rem;
+}
+
+.dialog_form {
+  display: flex;
+  padding: 4rem 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  background-color: #1d1d1d;
+}
+.dialog_form .form-group {
+  display: flex;
+  justify-content: center;
+}/*# sourceMappingURL=Dialog.css.map */

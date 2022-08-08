@@ -1,0 +1,49 @@
+@import "../../../styles/reset";
+@import "../../../styles/variables";
+@import "../../../styles/foreach";
+@import "../../../styles/mixins";
+@import "../../../styles/placeholders";
+
+header {
+  height: 7vh;
+  font-size: 1rem;
+  padding: 1.3rem 0;
+  background-color: $secondary;
+  color: white;
+  z-index: 100;
+  position: relative;
+  position: fixed;
+  width: 100vw;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .notif {
+    margin-left: 5rem;
+    position: relative;
+  }
+  .title {
+    margin-left: 5rem;
+  }
+}
+.notif {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nb {
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+@media screen and (max-width: 580px) {
+  .notif {
+    display: none;
+  }
+  .time {
+    display: none;
+  }
+}

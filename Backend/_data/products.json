@@ -1,0 +1,39 @@
+[
+  {
+    "_id": "5d7a514b5d2c12c7449be222",
+    "designation": "Boulon 10mm",
+    "refference": "AHSGY01",
+    "stock":100
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be223",
+    "designation": "roulement doubleFF ceramiques noir",
+    "refference": "RTCZY01",
+    "stock":100
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be224",
+    "designation": "frein etrier detailing auto",
+    "refference": "FERDZY01",
+    "stock":100
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be225",
+    "designation": "plaquette de frein standart",
+    "refference": "PLDFZY01",
+    "stock":80
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be226",
+    "designation": "Attelage de voiture",
+    "refference": "ATLSKSZY01",
+    "stock":50
+    },
+  {
+    "_id": "5d7a514b5d2c12c7449be227",
+    "designation": "gyrophare led magnetique",
+    "refference": "GYRZY01",
+    "stock":250
+  }
+  ]
+  

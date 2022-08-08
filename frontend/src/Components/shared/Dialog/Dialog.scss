@@ -1,0 +1,60 @@
+@import "../../../styles/reset";
+@import "../../../styles/variables";
+@import "../../../styles/foreach";
+@import "../../../styles/mixins";
+@import "../../../styles/placeholders";
+
+
+
+.modal {
+    position: absolute;
+    color: whitesmoke;
+    border-radius: 1rem;
+    padding: 1rem;
+    top: 40%;
+    left: 50%;
+    max-width: 90rem;
+    min-width: 300px;
+    transform: translate(-50%, -50%);
+  }
+  .btn-form-submit {
+    @extend %btn-form-submit;
+  }
+  
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 9999999999;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.801);
+  }
+  
+
+  
+.close-Modal {
+    position: absolute;
+    color: $primary;
+    font-weight: bolder;
+    right: 1rem;
+    padding: 1.8rem 1rem;
+  }
+  
+  .dialog_form {
+    display: flex;
+    padding: 4rem 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: $radius;
+    background-color: $secondary;
+  
+    .form-group {
+      display: flex;
+      justify-content: center;
+  
+    }
+  }

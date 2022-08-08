@@ -1,0 +1,47 @@
+[
+  {
+    "_id": "5d7a514b5d2c12c7449be120",
+    "product": "5d7a514b5d2c12c7449be225",
+    "orderNumber": "REDHBAO31",
+    "quantity": 1000,
+    "orderDate": "2022-01-04",
+    "supplierDate": "2022-01-08",
+    "deliveryDate": "2022-02-05"
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be121",
+    "product": "5d7a514b5d2c12c7449be225",
+    "orderNumber": "REDHBA67",
+    "quantity": 500,
+    "orderDate": "2022-03-10",
+    "supplierDate": "2022-03-12",
+    "deliveryDate": "2022-04-05"
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be122",
+    "product": "5d7a514b5d2c12c7449be225",
+    "orderNumber": "REDHBA56",
+    "quantity": 500,
+    "orderDate": "2022-04-28",
+    "supplierDate": "2022-04-30",
+    "deliveryDate": "2022-05-25"
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be123",
+    "product": "5d7a514b5d2c12c7449be225",
+    "orderNumber": "REDHBA45",
+    "quantity": 500,
+    "orderDate": "2022-06-18",
+    "supplierDate": "2022-06-19",
+    "deliveryDate": "2022-07-15"
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be124",
+    "product": "5d7a514b5d2c12c7449be225",
+    "orderNumber": "REDHBA89",
+    "quantity": 500,
+    "orderDate": "2022-07-20",
+    "supplierDate": "2022-07-22",
+    "deliveryDate": null
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "_id": "5d7a514b5d2c12c7449be620",
+    "uid_nfc": "A02",
+    "quantity": 50,
+    "product": "5d7a514b5d2c12c7449be022"
+},
+{
+    "_id": "5d7a514b5d2c12c7449be621",
+    "uid_nfc": "A03",
+    "quantity": 400,
+    "product": "5d7a514b5d2c12c7449be027"
+},
+{
+    "_id": "5d7a514b5d2c12c7449be622",
+    "quantity": 560,
+    "uid_nfc": "A04",
+    "product": "5d7a514b5d2c12c7449be026"
+},
+{
+    "_id": "5d7a514b5d2c12c7449be623",
+    "quantity": 100,
+    "uid_nfc": "A05",
+    "product": "5d7a514b5d2c12c7449be025"
+},
+{
+    "_id": "5d7a514b5d2c12c7449be624",
+    "quantity": 40,
+    "uid_nfc": "A06",
+    "product": "5d7a514b5d2c12c7449be023"
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be625",
+    "uid_nfc": "A07"
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be626",
+    "uid_nfc": "A08"
+  }
+]

@@ -1,0 +1,102 @@
+@import './styles/reset';
+@import './styles/variables';
+@import './styles/foreach';
+@import './styles/mixins';
+@import './styles/placeholders';
+@import './styles/animations';
+
+body {
+  background-color: $dark;
+  color: $text;
+  font-size: 2rem;
+}
+
+.container {
+  height: 100vh;
+  padding: 6rem 3%;
+  margin-top: 2rem;
+}
+
+.list-container{
+  margin-top: 2rem;
+  display: flex;
+  justify-content:center;
+  flex-wrap: wrap;
+}
+
+@media screen and (min-width: 900px) {
+  .container {
+    margin-left: 7rem;
+  }
+}
+
+.page-title {
+  padding: 0.3rem 0;
+  background-color: $secondary;
+  margin-top: 0.3rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: $radius;
+  text-align: center;
+}
+
+.form-group {
+  margin: auto;
+  width: 100%;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin: 0.3rem 0;
+  width: 100%;
+}
+
+select {
+  position: relative;
+  font-family: Arial;
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 0.8rem 3.5rem;
+  
+
+  &:focus{
+    border: none;
+    outline: none;
+  }
+}
+.loadingSpinnerContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingSpinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: #000 transparent #555 transparent;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

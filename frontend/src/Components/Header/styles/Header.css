@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0.3rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:active {
+  transform: scale(0.98);
+}
+
+input {
+  flex-grow: 2;
+  border: none;
+  font-size: 16px;
+  background-color: transparent;
+  color: white;
+}
+
+input:focus {
+  outline: none;
+}
+
+.atraiter {
+  background-color: #e4b949;
+}
+
+.encours {
+  background-color: #a9ca9a;
+}
+
+.retard {
+  background-color: #ec919a;
+}
+
+header {
+  height: 7vh;
+  font-size: 1rem;
+  padding: 1.3rem 0;
+  background-color: #1d1d1d;
+  color: white;
+  z-index: 100;
+  position: relative;
+  position: fixed;
+  width: 100vw;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stats .notif {
+  margin-left: 5rem;
+  position: relative;
+}
+.stats .title {
+  margin-left: 5rem;
+}
+
+.notif {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nb {
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+@media screen and (max-width: 580px) {
+  .notif {
+    display: none;
+  }
+  .time {
+    display: none;
+  }
+}/*# sourceMappingURL=Header.css.map */

@@ -1,0 +1,31 @@
+
+// ===================== responsive =====================
+
+@mixin smartphone {
+  @media only screen and (max-width: $smartphone) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media(min-width: $tabletMin)  and (max-width: $tabletMax) {
+    @content;
+  }
+}
+
+@mixin normal {
+  @media(min-width: $normalMin)  and (max-width: $normalMax) {
+    @content;
+  }
+}
+
+@mixin widescreen {
+  @media only screen and (max-width: $widescreen) {
+    @content;
+  }
+}
+@mixin landscape {
+  @media only screen and (max-width: $landscape) {
+    @content;
+  }
+}
