@@ -88,7 +88,7 @@ exports.getProduct = asyncHandler(async (req, res, next) => {
   if (!product) {
     return next(
       new ErrorResponse(
-        `CollectPoint not found with id of ${req.params.id}`,
+        `Aucun produit trouvée avec l'id : ${req.params.id}`,
         404,
       ),
     )

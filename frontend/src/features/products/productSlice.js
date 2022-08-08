@@ -28,6 +28,24 @@ export const createProduct = createAsyncThunk(
       }
     },
   )
+
+  // Get all products
+export const getProducts = createAsyncThunk(
+  'products/getAll',
+  async (_, thunkAPI) => {
+    try {
+      return await productService.getProducts()
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString()
+      return thunkAPI.rejectWithValue(message)
+    }
+  },
+)
   
 
 export const productSlice = createSlice({
@@ -36,7 +54,40 @@ export const productSlice = createSlice({
     reducers: {
         reset: (state) => initialState,
     },
-    extraReducers: (builder) => {}
+    extraReducers: (builder) => {
+
+      builder
+      .addCase(createProduct.pending, (state) => {
+        state.isLoading = true
+      })
+      .addCase(createProduct.fulfilled, (state, action) => {
+        state.isLoading = false
+        state.isSuccess = true
+        state.kanbans = action.payload
+      })
+      .addCase(createProduct.rejected, (state, action) => {
+        state.isLoading = false
+        state.isError = true
+        state.message = action.payload
+        state.kanbans = null
+      })
+      .addCase(getProducts.pending, (state) => {
+        state.isLoading = true
+      })
+      .addCase(getProducts.fulfilled, (state, action) => {
+        state.isLoading = false
+        state.isSuccess = true
+        state.kanbans = action.payload
+      })
+      .addCase(getProducts.rejected, (state, action) => {
+        state.isLoading = false
+        state.isError = true
+        state.message = action.payload
+        state.kanbans = null
+      })
+    
+
+    }
 })
 
 

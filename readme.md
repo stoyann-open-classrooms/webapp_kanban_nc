@@ -7,7 +7,7 @@ Pour une bonne organization, vous pouvez créer un dossier kanban-webapp dans le
 
 
 ## comment demmarer le projet :
-ouvrez un terminal depuis le dossier parent ouvrez un terminal 
+Une fois ce projet cloner ouvrez un terminal depuis le dossier parents
 
 **Demmarer en mode production**
 ```

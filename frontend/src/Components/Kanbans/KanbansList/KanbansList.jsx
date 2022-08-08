@@ -16,7 +16,7 @@ function KanbansList() {
         dispatch(reset())
       }
     }
-  }, [dispatch, isSuccess])
+  }, [dispatch, isSuccess, isError])
 
   useEffect(() => {
     dispatch(getKanbans())
