@@ -115,4 +115,14 @@ input:focus {
 .dialog_form .form-group {
   display: flex;
   justify-content: center;
+}
+
+.add-btn {
+  display: flex;
+  align-items: center;
+  border: 2px solid black;
+  padding: 0.5rem 0.9rem;
+}
+.add-btn svg {
+  margin-right: 1rem;
 }/*# sourceMappingURL=Dialog.css.map */

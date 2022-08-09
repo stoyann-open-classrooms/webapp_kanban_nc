@@ -3,8 +3,8 @@ const asyncHandler = require('../middlewares/async')
 
 const Product = require('../models/Product')
 
-// @desription: Get all collect points
-// @route: GET /api/v1/collect-points
+// @desription: Get all products
+// @route: GET /api/v1/products
 // @access: public
 exports.getProducts= asyncHandler(async (req, res, next) => {
   let query
@@ -79,8 +79,8 @@ exports.getProducts= asyncHandler(async (req, res, next) => {
     })
 })
 
-// @desription: Get a single collect point
-// @route: GET /api/v1/collect-points/:id
+// @desription: Get a single product
+// @route: GET /api/v1/products/:id
 // @access: public
 exports.getProduct = asyncHandler(async (req, res, next) => {
   const product = await Product.findById(req.params.id)
@@ -96,15 +96,15 @@ exports.getProduct = asyncHandler(async (req, res, next) => {
   res.status(201).json({ success: 'true', data: product })
 })
 
-// @desription: Create a new collect point
-// @route: POST /api/v1/collect-points/:id
+// @desription: Create a new product
+// @route: POST /api/v1/products/:id
 // @access: pivate
 exports.createProduct = asyncHandler(async (req, res, next) => {
   const product = await Product.create(req.body)
   res.status(201).json({ success: 'true', data: product })
 })
-// @desription: Update collect point
-// @route: POST /api/v1/collect-points/:id
+// @desription: Update product
+// @route: POST /api/v1/products/:id
 // @access: pivate
 exports.updateProduct = asyncHandler(async (req, res, next) => {
   const product = await Product.findByIdAndUpdate(
@@ -126,8 +126,8 @@ exports.updateProduct = asyncHandler(async (req, res, next) => {
 
   res.status(200).json({ success: 'true', data: product })
 })
-// @desription: Delete collect point
-// @route: DELETE /api/v1/collect-points/:id
+// @desription: Delete Product
+// @route: DELETE /api/v1/products/:id
 // @access: pivate
 exports.deleteProduct = asyncHandler(async (req, res, next) => {
   const  product= await Product.findById(req.params.id)

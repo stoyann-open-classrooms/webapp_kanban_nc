@@ -37,7 +37,7 @@ function ProductsItem({ product }) {
       <button onClick={() => deleteItem(product._id)} className="close">
         <FaTimes color="red" />
       </button>
-      <Link to={`/kanban/${product._id}`}>
+      <Link to={`/products/${product._id}`}>
         {/* TODO = formulaire d'edition d'un produit */}
         <button className="edit">
           <FaEdit color="red" />

@@ -4,10 +4,9 @@ const asyncHandler = require('../middlewares/async')
 const Order = require('../models/Order')
 const Product = require('../models/Product')
 
-// @desription: Get harvests
-// @route: GET /api/v1/harvests
-// @route: GET /api/v1/:collectPointId/harvests
-// @route: GET /api/v1/:productId/orders
+// @desription: Get Orders
+// @route: GET /api/v1/orders
+// @route: GET /api/v1/orders/productId
 // @access: public
 exports.getOrders = asyncHandler(async (req, res, next) => {
   let query
@@ -15,12 +14,12 @@ exports.getOrders = asyncHandler(async (req, res, next) => {
   if (req.params.productId) {
     query = Order.find({ product: req.params.productId }).populate({
       path: 'product',
-      select: 'refference designation',
+      select: 'refference designation image',
     })
   } else {
     query = Order.find().populate({
       path: 'product',
-      select: 'refference designation',
+      select: 'refference designation image',
     })
   }
 
@@ -59,7 +58,7 @@ exports.createOrder = asyncHandler(async (req, res, next) => {
 })
 // @desription: Update Request
 // @route: POST /api/v1/requests/:id
-// @access: pivate
+// @access: public
 exports.updateOrder = asyncHandler(async (req, res, next) => {
   const order = await Order.findByIdAndUpdate(req.params.id, req.body, {
     new: true,

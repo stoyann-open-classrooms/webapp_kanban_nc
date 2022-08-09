@@ -136,15 +136,19 @@
 
 .card-info-request {
   margin: 0rem 3rem;
+  font-size: 1.4rem;
 
   .title-card-kanban {
-    margin-top: 2.2rem;
+    margin-top: 1.5rem;
+    font-size: 1.4rem;
     color: $primary;
   }
 }
 
 .box {
-  margin: 1rem 0 0 5rem;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
 }
 .no-product{
   color: $primary;

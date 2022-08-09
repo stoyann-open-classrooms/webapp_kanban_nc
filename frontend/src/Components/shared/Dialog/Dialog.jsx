@@ -14,6 +14,7 @@ function Dialog({ btn, children, addIcone, editIcone }) {
     <>
       <button className="add-btn" onClick={toogleModal}>
         {!addIcone ? <FaPlus/>: ''}
+        {btn}
       </button>
       {!modal ? (
         <div className="overlay">

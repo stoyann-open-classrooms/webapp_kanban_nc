@@ -22,7 +22,6 @@ const KanbanSchema = new mongoose.Schema(
       ],
     },
 
-    associateProduct: Boolean,
 
     quantity: {
       type: Number,
@@ -42,14 +41,5 @@ KanbanSchema.pre('save', function (next) {
   next()
 })
 
-// Create boolean product
-KanbanSchema.pre('save', function (next) {
-    if (this.product != null) {
-      this.associateProduct = false
-    } else {
-      this.associateProduct = true
-    }
-    next()
-  })
 
 module.exports = mongoose.model('Kanban', KanbanSchema)
