@@ -1,6 +1,6 @@
 import React from 'react'
-import KanbanActions from '../Components/Kanbans/KanbanActions/KanbanActions'
-import KanbansList from '../Components/Kanbans/KanbansList/KanbansList'
+import KanbanActions from '../Components/Kanbans/KanbanActions'
+import KanbansList from '../Components/Kanbans/KanbansList'
 
 function Kanbans() {
   return (

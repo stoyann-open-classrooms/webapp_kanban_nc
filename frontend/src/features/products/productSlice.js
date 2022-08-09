@@ -63,13 +63,13 @@ export const productSlice = createSlice({
       .addCase(createProduct.fulfilled, (state, action) => {
         state.isLoading = false
         state.isSuccess = true
-        state.kanbans = action.payload
+        state.products = action.payload
       })
       .addCase(createProduct.rejected, (state, action) => {
         state.isLoading = false
         state.isError = true
         state.message = action.payload
-        state.kanbans = null
+        state.products = null
       })
       .addCase(getProducts.pending, (state) => {
         state.isLoading = true
@@ -77,13 +77,13 @@ export const productSlice = createSlice({
       .addCase(getProducts.fulfilled, (state, action) => {
         state.isLoading = false
         state.isSuccess = true
-        state.kanbans = action.payload
+        state.products = action.payload
       })
       .addCase(getProducts.rejected, (state, action) => {
         state.isLoading = false
         state.isError = true
         state.message = action.payload
-        state.kanbans = null
+        state.products = null
       })
     
 

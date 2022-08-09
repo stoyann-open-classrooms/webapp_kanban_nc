@@ -1,9 +1,8 @@
-import React from 'react'
-import Dialog from '../../shared/Dialog/Dialog'
-import SearchBar from '../../shared/SearchBar/SearchBar'
-import KanbanAddForm from '../KanbanAddForm/KanbanAddForm'
+import Dialog from '../shared/Dialog/Dialog'
+import SearchBar from '../shared/SearchBar/SearchBar'
+import ProductsAddForm from './ProductsAddForm'
 
-function KanbanActions() {
+function ProductsActions() {
   return (
     <>
    
@@ -11,7 +10,7 @@ function KanbanActions() {
         <div className="actions-infos">5 produits en base de données</div>
       <div className="dialog-box">
         <Dialog>
-          <KanbanAddForm />
+          <ProductsAddForm />
         </Dialog>
       </div>
     </div>
@@ -25,4 +24,4 @@ function KanbanActions() {
   )
 }
 
-export default KanbanActions
+export default ProductsActions

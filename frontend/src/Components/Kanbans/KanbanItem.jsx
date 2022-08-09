@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FaTimes, FaEdit } from 'react-icons/fa'
-import Card from '../../shared/Card/Card'
-import NoPics from '../../../Assets/no_picture.png'
+import Card from '../shared/Card/Card'
+import NoPics from '../../Assets/no_picture.png'
 
 function KanbanItem({ kanban }) {
    
@@ -9,10 +9,6 @@ function KanbanItem({ kanban }) {
  
         if(window.confirm('êtes vous certains de vouloir supprimer ce kanban? Cette action supprimera toutes les commandes liée au kanban.')) {
      
-        //  axios.delete(`
-        //  http://localhost:9000/sfac/api/kanban/${id}`);
-         
-        //  setAlert(`Le  kanban a été supprimé avec succès`, 'error')
          setTimeout(() => window.location.reload(), 2000)
      
        }}
@@ -26,7 +22,7 @@ function KanbanItem({ kanban }) {
         ) : (
           <img
             className="card-cover-img"
-            src={'http://localhost:9000/' + kanban.produit.image}
+            src={'http://localhost:5057/' + kanban.produit.image}
             alt={kanban.produit.designation}
           />
         )}

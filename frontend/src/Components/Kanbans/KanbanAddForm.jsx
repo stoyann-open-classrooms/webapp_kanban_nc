@@ -1,8 +1,8 @@
 import { useState, useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import  {toast}  from 'react-toastify'
-import { createKanban, reset } from '../../../features/kanbans/kanbanSlice'
-import Spinner from '../../shared/Spinner'
+import { createKanban, reset } from '../../features/kanbans/kanbanSlice'
+import Spinner from '../shared/Spinner'
 
 
 function KanbanAddForm() {

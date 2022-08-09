@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getKanbans, reset } from '../../../features/kanbans/kanbanSlice'
-import Spinner from '../../shared/Spinner'
-import KanbanItem from '../KanbanItem/KanbanItem'
+import { getKanbans, reset } from '../../features/kanbans/kanbanSlice'
+import Spinner from '../shared/Spinner'
+import KanbanItem from './KanbanItem'
 
 function KanbansList() {
   const { kanbans, isLoading, isError, isSuccess } = useSelector(
