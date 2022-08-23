@@ -15,7 +15,7 @@ const dispatch = useDispatch()
         toast.error(message)
     }
     if(isSuccess){
-        toast.success('kanban ajouté avec succées')
+      
       dispatch(reset())
     }
 
@@ -38,6 +38,7 @@ const dispatch = useDispatch()
     console.log(kanbanData);
     e.preventDefault()
     dispatch(createKanban(kanbanData))
+    toast.success('kanban ajouté avec succées')
   }
   if(isLoading) {
     return <Spinner/>

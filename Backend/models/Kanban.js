@@ -4,13 +4,13 @@ const KanbanSchema = new mongoose.Schema(
   {
     slug: String,
     product: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Product',
-      },
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Product',
+    },
     requests: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Requests',
-      },
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Requests',
+    },
     uid_nfc: {
       type: String,
       required: ['true', 'Vous devez ajouter un nom pour le shop'],
@@ -21,12 +21,9 @@ const KanbanSchema = new mongoose.Schema(
         "L'identifiant d'un kanban ne peut contenir plus de de 10 caractères",
       ],
     },
-
-
     quantity: {
       type: Number,
     },
-   
   },
   { timestamps: true },
   {
@@ -40,6 +37,5 @@ KanbanSchema.pre('save', function (next) {
   this.slug = slugify(this.uid_nfc, { lower: true })
   next()
 })
-
 
 module.exports = mongoose.model('Kanban', KanbanSchema)

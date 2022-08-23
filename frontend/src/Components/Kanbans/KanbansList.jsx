@@ -21,7 +21,7 @@ function KanbansList() {
   useEffect(() => {
     dispatch(getKanbans())
   }, [dispatch])
-  console.log(kanbans.data)
+
   if (isLoading) {
     return <Spinner />
   } else {
