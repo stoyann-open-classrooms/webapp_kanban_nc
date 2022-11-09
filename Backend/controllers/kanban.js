@@ -134,7 +134,7 @@ exports.deleteKanban = asyncHandler(async (req, res, next) => {
       new ErrorResponse(`kanban not found with id of ${req.params.id}`, 404),
     )
   }
-  Kanban.remove()
+  kanban.remove()
   res.status(200).json({ success: 'true', data: {} })
 })
 

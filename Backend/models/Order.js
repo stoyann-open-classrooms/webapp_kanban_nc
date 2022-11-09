@@ -15,7 +15,7 @@ const OrderSchema = new mongoose.Schema(
     quantity: {
       type: Number,
     },
-   
+   orderDays: Number,
 
    status: String,
     orderDate: {
@@ -51,19 +51,19 @@ OrderSchema.pre('save', function (next) {
   next()
 })
 // Calcule le nombre de jours ecouler depuis la demande
-// OrderSchema.pre('save', function (next) {
-//   if (this.deliveryDate === null) {
-//     this.orderDays = Math.round(
-//       (Date.now() - new Date(this.orderDate).getTime()) / (1000 * 3600 * 24),
-//     )
-//   } else {
-//     this.orderDays = Math.round(
-//       (new Date(this.deliveryDate) - new Date(this.orderDate).getTime()) /
-//         (1000 * 3600 * 24),
-//     )
-//   }
-//   next()
-// })
+OrderSchema.pre('save', function (next) {
+  if (this.deliveryDate === null) {
+    this.orderDays = Math.round(
+      (Date.now() - new Date(this.orderDate).getTime()) / (1000 * 3600 * 24),
+    )
+  } else {
+    this.orderDays = Math.round(
+      (new Date(this.deliveryDate) - new Date(this.orderDate).getTime()) /
+        (1000 * 3600 * 24),
+    )
+  }
+  next()
+})
 
 
 

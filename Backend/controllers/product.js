@@ -112,12 +112,13 @@ const getProduct = asyncHandler(async (req, res, next) => {
 
 
 const createProduct = asyncHandler(async (req, res, next) => {
-  const { refference, designation, name } = req.body
+  const { refference, designation, name, stock } = req.body
   const product = await Product.create({
     image : req.file.path,
     name: name,
     refference: refference,
     designation: designation,
+    stock: stock,
   })
   res.status(201).json({
     success: true,
@@ -157,7 +158,7 @@ const updateProduct = asyncHandler(async (req, res, next) => {
 // @route: DELETE /api/v1/products/:id
 // @access: pivate
 const deleteProduct = asyncHandler(async (req, res, next) => {
-  const  product= await Product.findById(req.params.id)
+  const  product = await Product.findById(req.params.id)
   if (!product) {
     return next(
       new ErrorResponse(`Product not found with id of ${req.params.id}`, 404),

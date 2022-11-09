@@ -69,9 +69,6 @@ app.use(cors())
 
 
 
-
-
-
 // cors middleware
 app.use(
   cors({

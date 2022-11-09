@@ -4,31 +4,6 @@ const Request = require('../models/Request')
 
 
 
-// @desription: Get Requests
-// @route: GET /api/v1/requests
-// @route: GET /api/v1/:kanbanId/requests
-// @access: public
-exports.getRequests = asyncHandler(async (req, res, next) => {
-    let query
-  
-    if (req.params.kanbanId) {
-      query = Request.find({ kanban: req.params.kanbanId })
-    } else {
-      query = Request.find().populate({
-        path: 'kanban',
-        select: 'uid_nfc',
-      })
-    }
-  
-    const requests = await query
-    res.status(200).json({
-      success: true,
-      count: requests.length,
-      data: requests,
-    })
-  })
-
-
 
 
 
@@ -95,11 +70,12 @@ exports.getRequests = asyncHandler(async (req, res, next) => {
       }
     }
   
+
     res
       .status(201)
       .json({
         success: 'true',
-        count: Request.length,
+        count: requests.length ,
         pagination,
         data: requests,
       })
@@ -146,7 +122,7 @@ exports.updateRequest = asyncHandler(async (req, res, next) => {
     )
   }
 
-  res.status(200).json({ success: 'true', data: kanban })
+  res.status(200).json({ success: 'true', data: request })
 })
 // @desription: Delete request
 // @route: DELETE /api/v1/requests/:id
@@ -161,6 +137,6 @@ exports.deleteRequest = asyncHandler(async (req, res, next) => {
       ),
     )
   }
-  Request.remove()
+  request.remove()
   res.status(200).json({ success: 'true', data: {} })
 })

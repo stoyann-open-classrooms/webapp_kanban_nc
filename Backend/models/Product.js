@@ -10,7 +10,7 @@ const ProductSchema = new mongoose.Schema(
     slug: String,
     image: {
       type: String,
-      required: [true, 'Vous devez charger un logo ou une photo de profil'],
+      required: [true, 'Vous devez ajouter une image pour ce produit'],
       default: 'public\\upload\\no-photo',
     },
     name: {

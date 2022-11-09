@@ -13,7 +13,7 @@ const KanbanSchema = new mongoose.Schema(
     },
     uid_nfc: {
       type: String,
-      required: ['true', 'Vous devez ajouter un nom pour le shop'],
+      required: ['true', 'Vous devez ajouter un identifiant NFC'],
       unique: true,
       trim: true,
       maxlength: [

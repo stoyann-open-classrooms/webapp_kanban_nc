@@ -67,7 +67,7 @@ exports.updateOrder = asyncHandler(async (req, res, next) => {
   if (!order) {
     return next(
       new ErrorResponse(
-        `❌ Request not found with id of ${req.params.id}`,
+        `❌ Order not found with id of ${req.params.id}`,
         404,
       ),
     )
@@ -83,11 +83,11 @@ exports.deleteOrder = asyncHandler(async (req, res, next) => {
   if (!order) {
     return next(
       new ErrorResponse(
-        `❌ Request not found with id of ${req.params.id}`,
+        `❌ Order not found with id of ${req.params.id}`,
         404,
       ),
     )
   }
-  Order.remove()
+  order.remove()
   res.status(200).json({ success: 'true', data: {} })
 })
