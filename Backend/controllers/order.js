@@ -6,7 +6,6 @@ const Product = require('../models/Product')
 
 // @desription: Get Orders
 // @route: GET /api/v1/orders
-// @route: GET /api/v1/orders/productId
 // @access: public
 exports.getOrders = asyncHandler(async (req, res, next) => {
   let query
@@ -31,7 +30,7 @@ exports.getOrders = asyncHandler(async (req, res, next) => {
   })
 })
 // @desription: Get a single order
-// @route: GET /api/v1/requests/:id
+// @route: GET /api/v1/orders/:id
 // @access: public
 exports.getOrder = asyncHandler(async (req, res, next) => {
   const order = await Order.findById(req.params.id).populate({
@@ -49,8 +48,8 @@ exports.getOrder = asyncHandler(async (req, res, next) => {
   res.status(201).json({ success: 'true', data: order })
 })
 
-// @desription: Create a new request
-// @route: POST /api/v1/requests:id
+// @desription: Create a new order
+// @route: POST /api/v1/order
 // @access: public
 exports.createOrder = asyncHandler(async (req, res, next) => {
   const order = await Order.create(req.body)
@@ -75,9 +74,9 @@ exports.updateOrder = asyncHandler(async (req, res, next) => {
 
   res.status(200).json({ success: 'true', data: order })
 })
-// @desription: Delete request
-// @route: DELETE /api/v1/requests/:id
-// @access: pivate
+// @desription: Delete order
+// @route: DELETE /api/v1/order/:id
+// @access: public
 exports.deleteOrder = asyncHandler(async (req, res, next) => {
   const order = await Order.findById(req.params.id)
   if (!order) {

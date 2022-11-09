@@ -20,6 +20,6 @@ const RequestSchema = new mongoose.Schema(
   { timestamps: true },
 )
 
-// call get
+
 
 module.exports = mongoose.model('Request', RequestSchema)

@@ -5,8 +5,9 @@ const Request = require('../models/Request')
 
 
 
-
-
+// @desription: Get all requests
+// @route: GET /api/v1/requests
+// @access: public
 
   exports.getRequests= asyncHandler(async (req, res, next) => {
     let query
@@ -99,7 +100,7 @@ exports.getRequest = asyncHandler(async (req, res, next) => {
 })
 
 // @desription: Create a new request
-// @route: POST /api/v1/requests:id
+// @route: POST /api/v1/requests
 // @access: public
 exports.createRequest = asyncHandler(async (req, res, next) => {
   const request = await Request.create(req.body)
@@ -107,7 +108,7 @@ exports.createRequest = asyncHandler(async (req, res, next) => {
 })
 // @desription: Update Request
 // @route: POST /api/v1/requests/:id
-// @access: pivate
+// @access: public
 exports.updateRequest = asyncHandler(async (req, res, next) => {
   const request = await Request.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
@@ -126,7 +127,7 @@ exports.updateRequest = asyncHandler(async (req, res, next) => {
 })
 // @desription: Delete request
 // @route: DELETE /api/v1/requests/:id
-// @access: pivate
+// @access: public
 exports.deleteRequest = asyncHandler(async (req, res, next) => {
   const request = await Request.findById(req.params.id)
   if (!request) {

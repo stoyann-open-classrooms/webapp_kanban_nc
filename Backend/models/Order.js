@@ -3,7 +3,6 @@ const slugify = require('slugify')
 
 const OrderSchema = new mongoose.Schema(
   {
-   
     orderNumber: {
       type: String,
       required: [true, "Merci d'entrer un numero de commande"],
@@ -15,9 +14,9 @@ const OrderSchema = new mongoose.Schema(
     quantity: {
       type: Number,
     },
-   orderDays: Number,
+    orderDays: Number,
 
-   status: String,
+    status: String,
     orderDate: {
       type: Date,
       required: true,
@@ -39,8 +38,8 @@ const OrderSchema = new mongoose.Schema(
     product: {
       type: mongoose.Schema.ObjectId,
       ref: 'Product',
-      required: true
-    }
+      required: true,
+    },
   },
   { timestamps: true },
 )
@@ -50,7 +49,7 @@ OrderSchema.pre('save', function (next) {
   this.slug = slugify(this.orderNumber, { lower: true })
   next()
 })
-// Calcule le nombre de jours ecouler depuis la demande
+// Calculates the number of days elapsed since the request
 OrderSchema.pre('save', function (next) {
   if (this.deliveryDate === null) {
     this.orderDays = Math.round(
@@ -65,21 +64,19 @@ OrderSchema.pre('save', function (next) {
   next()
 })
 
-
-
-// create status 
+// create the status  order in relation to the dates
 
 OrderSchema.pre('save', function (next) {
-    if(this.supplierDate === null) {
-        this.status = "Traitement fournisseur"
-    }
-    if(this.deliveryDate === null && this.supplierDate != null) {
-        this.status = "en cours de livraison"  
-    }
-    if(this.deliveryDate != null) {
-        this.status = "Livrée"  
-    }
-    next()
-  })
+  if (this.supplierDate === null) {
+    this.status = 'Traitement fournisseur'
+  }
+  if (this.deliveryDate === null && this.supplierDate != null) {
+    this.status = 'en cours de livraison'
+  }
+  if (this.deliveryDate != null) {
+    this.status = 'Livrée'
+  }
+  next()
+})
 
 module.exports = mongoose.model('Order', OrderSchema)

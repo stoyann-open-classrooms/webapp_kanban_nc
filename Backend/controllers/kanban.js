@@ -103,7 +103,7 @@ exports.createKanban = asyncHandler(async (req, res, next) => {
 })
 // @desription: Update kanban
 // @route: POST /api/v1/kanbans/:id
-// @access: pivate
+// @access: public
 exports.updateKanban = asyncHandler(async (req, res, next) => {
   const kanban = await Kanban.findByIdAndUpdate(
     req.params.id,

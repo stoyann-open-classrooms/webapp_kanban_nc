@@ -102,14 +102,11 @@ const getProduct = asyncHandler(async (req, res, next) => {
   res.status(201).json({ success: 'true', data: product })
 })
 
-// @desription: Create a new product
-// @route: POST /api/v1/products/:id
-// @access: pivate
-// exports.createProduct = asyncHandler(async (req, res, next) => {
-//   const product = await Product.create(req.body)
-//   res.status(201).json({ success: 'true', data: product })
-// })
 
+
+// @desription: Post new product
+// @route: GET /api/v1/products
+// @access: public
 
 const createProduct = asyncHandler(async (req, res, next) => {
   const { refference, designation, name, stock } = req.body
@@ -131,7 +128,7 @@ const createProduct = asyncHandler(async (req, res, next) => {
 
 // @desription: Update product
 // @route: POST /api/v1/products/:id
-// @access: pivate
+// @access: public
 const updateProduct = asyncHandler(async (req, res, next) => {
   const product = await Product.findByIdAndUpdate(
     req.params.id,
@@ -156,7 +153,7 @@ const updateProduct = asyncHandler(async (req, res, next) => {
 })
 // @desription: Delete Product
 // @route: DELETE /api/v1/products/:id
-// @access: pivate
+// @access: public
 const deleteProduct = asyncHandler(async (req, res, next) => {
   const  product = await Product.findById(req.params.id)
   if (!product) {

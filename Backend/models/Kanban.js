@@ -32,7 +32,7 @@ const KanbanSchema = new mongoose.Schema(
   },
 )
 
-// create Shop slug from the shop name
+// create kanban slug from the nfc id
 KanbanSchema.pre('save', function (next) {
   this.slug = slugify(this.uid_nfc, { lower: true })
   next()
