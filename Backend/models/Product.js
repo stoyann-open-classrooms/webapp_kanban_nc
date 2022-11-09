@@ -13,9 +13,15 @@ const ProductSchema = new mongoose.Schema(
       required: [true, 'Vous devez charger un logo ou une photo de profil'],
       default: 'public\\upload\\no-photo',
     },
-    designation: {
+    name: {
       type: String,
       required: [true, "Merci d'entrer un nom de produit"],
+      trim: true,
+      maxlength: [50, 'Le nom doit contenir au maximum 50 caractères'],
+    },
+    designation: {
+      type: String,
+      required: [true, "Merci d'entrer une designation produit"],
       trim: true,
       maxlength: [50, 'Le nom doit contenir au maximum 50 caractères'],
     },
@@ -35,7 +41,7 @@ const ProductSchema = new mongoose.Schema(
   { timestamps: true },
 )
 
-// Create  order slug from the order number
+// Create  product slug from the product refference
 ProductSchema.pre('save', function (next) {
   this.slug = slugify(this.refference, { lower: true })
   next()

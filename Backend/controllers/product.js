@@ -1,12 +1,18 @@
 const ErrorResponse = require('../utils/errorResponse')
 const asyncHandler = require('../middlewares/async')
 
+// image Upload dependence
+
+const multer = require("multer");
+const path = require("path");
+
+
 const Product = require('../models/Product')
 
 // @desription: Get all products
 // @route: GET /api/v1/products
 // @access: public
-exports.getProducts= asyncHandler(async (req, res, next) => {
+const getProducts= asyncHandler(async (req, res, next) => {
   let query
 
   // copy req.query
@@ -82,7 +88,7 @@ exports.getProducts= asyncHandler(async (req, res, next) => {
 // @desription: Get a single product
 // @route: GET /api/v1/products/:id
 // @access: public
-exports.getProduct = asyncHandler(async (req, res, next) => {
+const getProduct = asyncHandler(async (req, res, next) => {
   const product = await Product.findById(req.params.id)
 
   if (!product) {
@@ -99,14 +105,33 @@ exports.getProduct = asyncHandler(async (req, res, next) => {
 // @desription: Create a new product
 // @route: POST /api/v1/products/:id
 // @access: pivate
-exports.createProduct = asyncHandler(async (req, res, next) => {
-  const product = await Product.create(req.body)
-  res.status(201).json({ success: 'true', data: product })
+// exports.createProduct = asyncHandler(async (req, res, next) => {
+//   const product = await Product.create(req.body)
+//   res.status(201).json({ success: 'true', data: product })
+// })
+
+
+const createProduct = asyncHandler(async (req, res, next) => {
+  const { refference, designation, name } = req.body
+  const product = await Product.create({
+    image : req.file.path,
+    name: name,
+    refference: refference,
+    designation: designation,
+  })
+  res.status(201).json({
+    success: true,
+    data: product,
+  })
 })
+
+
+
+
 // @desription: Update product
 // @route: POST /api/v1/products/:id
 // @access: pivate
-exports.updateProduct = asyncHandler(async (req, res, next) => {
+const updateProduct = asyncHandler(async (req, res, next) => {
   const product = await Product.findByIdAndUpdate(
     req.params.id,
     req.body,
@@ -124,18 +149,60 @@ exports.updateProduct = asyncHandler(async (req, res, next) => {
     )
   }
 
+
+
   res.status(200).json({ success: 'true', data: product })
 })
 // @desription: Delete Product
 // @route: DELETE /api/v1/products/:id
 // @access: pivate
-exports.deleteProduct = asyncHandler(async (req, res, next) => {
+const deleteProduct = asyncHandler(async (req, res, next) => {
   const  product= await Product.findById(req.params.id)
   if (!product) {
     return next(
-      new ErrorResponse(`Shop not found with id of ${req.params.id}`, 404),
+      new ErrorResponse(`Product not found with id of ${req.params.id}`, 404),
     )
   }
-  Product.remove()
+  product.remove()
   res.status(200).json({ success: 'true', data: {} })
 })
+
+
+
+// // =========================== UPLOAD IMAGE CONTROLLER ========================================
+
+const im = "product_";
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "public/upload");
+  },
+  filename: (req, file, cb) => {
+    cb(null, im + Date.now() + path.extname(file.originalname));
+  },
+});
+
+const upload = multer({
+  storage: storage,
+  limits: { fileSize: "1000000" },
+  fileFilter: (req, file, cb) => {
+    const fileTypes = /jpeg|jpg|png|gif/;
+    const mimeType = fileTypes.test(file.mimetype);
+    const extname = fileTypes.test(path.extname(file.originalname));
+
+    if (mimeType && extname) {
+      return cb(null, true);
+    }
+    cb("Le fichier doit être au format JPG , JPEG , PNG ou GIF");
+  },
+}).single("image");
+
+
+module.exports = {
+  getProduct,
+  upload,
+  getProducts,
+  createProduct, 
+  deleteProduct,
+  updateProduct
+   
+ }

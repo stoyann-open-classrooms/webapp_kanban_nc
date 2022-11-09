@@ -33,7 +33,7 @@ node seeder -i
 ```
 **vider la base de donées**
 ```
-node seeder -u
+node seeder -d
 ```
 
 # FRONTEND

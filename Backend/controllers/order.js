@@ -30,7 +30,7 @@ exports.getOrders = asyncHandler(async (req, res, next) => {
     data: orders,
   })
 })
-// @desription: Get a single request
+// @desription: Get a single order
 // @route: GET /api/v1/requests/:id
 // @access: public
 exports.getOrder = asyncHandler(async (req, res, next) => {
