@@ -13,7 +13,7 @@ const Order = require('./models/Order')
 
 
 // connect DB
-mongoose.connect("mongodb+srv://superAdmin:DDlbBff9Kj5U9Jt1@krystoclusterv1.thnbs.mongodb.net/kanban_API_v1?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://stoyann:8CJM2WkvNVLclk7r@kanbanapprfid.nu42edl.mongodb.net/kanban_api?retryWrites=true&w=majority")
 
 //Read JSON files
 const kanbans = JSON.parse(
